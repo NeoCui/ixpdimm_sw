@@ -530,7 +530,7 @@ target_link_libraries(ixpdimm-monitor ${API_LIB_NAME} ${CORE_LIB_NAME})
 # Install
 # --------------------------------------------------------------------------------------------------
 if (LNX_BUILD)
-	install (CODE "execute_process(COMMAND /bin/sh ${ROOT}/install/linux/install.sh ${OUTPUT_DIR} ${SIM_BUILD})")
+	install (CODE "execute_process(COMMAND /bin/bash ${ROOT}/install/linux/install.sh ${OUTPUT_DIR} ${SIM_BUILD})")
 elseif (WIN_BUILD)
 	install (CODE "execute_process(COMMAND cmd /c ${ROOT}/install/windows/install.cmd ${OUTPUT_DIR} ${SIM_BUILD})")
 endif ()
@@ -540,7 +540,7 @@ endif ()
 # --------------------------------------------------------------------------------------------------
 if (LNX_BUILD)
 		add_custom_target(uninstall
-			COMMAND /bin/sh ${ROOT}/install/linux/uninstall.sh ${OUTPUT_DIR} ${SIM_BUILD})
+			COMMAND /bin/bash ${ROOT}/install/linux/uninstall.sh ${OUTPUT_DIR} ${SIM_BUILD})
 elseif (WIN_BUILD)
 		add_custom_target(uninstall
 			COMMAND cmd /c ${ROOT}/install/windows/uninstall.cmd ${OUTPUT_DIR} ${SIM_BUILD})

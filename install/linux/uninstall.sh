@@ -1,3 +1,4 @@
+#!/bin/bash
 
 . $(dirname $0)/INSTALLCONFIG.FILE
 
